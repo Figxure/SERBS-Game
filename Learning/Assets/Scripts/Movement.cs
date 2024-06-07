@@ -112,9 +112,6 @@ public class Movement : MonoBehaviour
         //vector that determines where player is gonna move based on orientation. we multiply the inputs to give it a direction and input
         moveDir = orientation.forward * Ydir + orientation.right * Xdir;
 
-
-
-
         //adds force to the theoretical direction and moves us, god i love physics
         if (grounded)        
             rb.AddForce(moveDir.normalized * 10f, ForceMode.Force);
@@ -127,9 +124,6 @@ public class Movement : MonoBehaviour
 
     void Jump()
     {
-
-        
-
         //reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
