@@ -45,13 +45,15 @@ public class Damage : MonoBehaviour
     void Punch()
     {
 
-        Collider[] objs = Physics.OverlapSphere(attackPoint.position, attackRange, Hittable);
+        Collider[] objs = Physics.OverlapSphere(attackPoint.position, attackRange/*, Hittable*/);
 
-        Debug.Log(objs);
+        //Debug.Log(objs);
 
         foreach (var obj in objs)
         {
-            if(Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit))
+            Debug.Log(obj);
+
+            if (Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit))
 
             {
                 hit.Damage();
