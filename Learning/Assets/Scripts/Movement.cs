@@ -88,7 +88,7 @@ public class Movement : MonoBehaviour
     void Move()
     {
         //simple code that adds in running
-        if (Input.GetKey(KeyCode.LeftShift) == true)
+        if (grounded == true && Input.GetKey(KeyCode.LeftShift) == true)
         {
             rb.AddForce(moveDir.normalized * 13f, ForceMode.Force);
         }
