@@ -54,7 +54,6 @@ public class Damage : MonoBehaviour
             Debug.Log(obj);
 
             if (Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit))
-
             {
                 hit.Damage();
 
