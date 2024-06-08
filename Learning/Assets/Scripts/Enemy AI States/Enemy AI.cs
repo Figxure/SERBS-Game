@@ -110,7 +110,7 @@ public class EnemyAI : EnemyStructure, IDamageable
         attacked = false;
         readyToAttack = true;
 
-        Invoke("Chase", 50000000);
+        Invoke("Chase", 2.0f);
 
         
     }
@@ -128,7 +128,7 @@ public class EnemyAI : EnemyStructure, IDamageable
         Debug.Log("Goon attacked");
 
         if(attacked == true)
-            Invoke("ResetAttack", 50000000);
+            Invoke("ResetAttack", 4.0f);
 
     }
 
