@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Player
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public Healthbar healthBar;
-    // Start is called before the first frame update
-    void Start()
+    public class Player : MonoBehaviour
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-        
-    }
+        public int maxHealth = 100;
+        public int currentHealth;
+        public Healthbar healthBar;
+        // Start is called before the first frame update
+        void Start()
+        {
+            currentHealth = maxHealth;
+            healthBar.SetMaxHealth(maxHealth);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
+        }
 
-        healthBar.SetHealth(currentHealth);
+        // Update is called once per frame
+        void Update()
+        {
+
+
+        }
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+        }
     }
 }

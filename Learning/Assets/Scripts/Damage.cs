@@ -6,21 +6,10 @@ public class Damage : MonoBehaviour
 {
     public Healthbar Health;
     public float damage;
-
-    public GameObject enemy;
-
     public LayerMask Hittable;
-
     public Transform attackPoint;
-
     public float attackRange;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -60,28 +49,5 @@ public class Damage : MonoBehaviour
                 Debug.Log("Delete mode");
             }       
         }
-
-        //if (Input.GetKey(KeyCode.Mouse0))
-        //{
-        //    //Physics.Raycast(transform.position, Vector3.down, Playerheight * 0.5f + 0.2f, IsGround)
-
-        //    //if player hits enemy, do damage
-
-        //    if (Physics.Raycast(transform.position, Vector3.forward, 3f, Hittable))
-        //    {
-        //        Destroy(enemy);
-        //    }
-        //}
     }
-
-
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        Health.Health -= damage;
-    //    }
-    //}
 }
