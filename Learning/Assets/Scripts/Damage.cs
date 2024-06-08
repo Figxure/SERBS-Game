@@ -46,7 +46,7 @@ public class Damage : MonoBehaviour
             {
                 hit.Damage();
 
-                Debug.Log("Delete mode");
+                Debug.Log("hit mode");
             }       
         }
     }

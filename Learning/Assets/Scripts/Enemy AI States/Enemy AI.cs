@@ -28,14 +28,27 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     bool grounded;
 
-    public int Health { get; set; }
+    public float timeBetweenAttacks;
+
+    public bool readyToAttack;
+
+    public bool attacked;
+
+
+    //public int Health { get; set; }
 
 
     public void Damage()
     {
-        Health -= 50;
+        //Health -= 50;
+        currentHealth = currentHealth - 1;
 
-        Destroy(Enemy);
+
+        if(currentHealth <= 0)
+        {
+            Destroy(Enemy);
+        }
+
 
     }
 
@@ -77,17 +90,29 @@ public class EnemyAI : EnemyStructure, IDamageable
 
         if (Distance.magnitude < 2f)
         {
+            readyToAttack = true;
+
             agent.isStopped = true;
+            
+            if(readyToAttack == true)
+                Attack();
+
         }
         else
         {
             agent.isStopped = false;
+            
         }
     }
 
     void ResetAttack()
     {
-        player.TakeDamage(10);
+        attacked = false;
+        readyToAttack = true;
+
+        Invoke("Chase", 500f);
+
+        
     }
 
     protected override void Attack()
@@ -96,7 +121,14 @@ public class EnemyAI : EnemyStructure, IDamageable
         base.Attack();
         player.TakeDamage(10);
 
+        attacked = true;
+
+        readyToAttack = false;
+
         Debug.Log("Goon attacked");
+
+        if(attacked == true)
+            Invoke("ResetAttack", 500f);
 
     }
 

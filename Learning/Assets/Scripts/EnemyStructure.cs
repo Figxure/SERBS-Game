@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class  EnemyStructure : MonoBehaviour
 {
-    public float Health;
+    public int currentHealth = 100;
 
     //public float speed;
 

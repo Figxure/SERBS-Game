@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11457184, g: 0.33009583, b: 0.7115123, a: 1}
+  m_IndirectSpecularColor: {r: 0.114580505, g: 0.33012125, b: 0.71203196, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a4efb11df50de44b6df2191f0ab346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  currentHealth: 0
   player: {fileID: 1049000181}
   Playerheight: 3
   playerTransform: {fileID: 1049000176}
@@ -254,6 +254,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundDrag: 5e+25
+  timeBetweenAttacks: 5
+  readyToAttack: 0
+  attacked: 0
 --- !u!65 &22025319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -717,7 +720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -778, y: 309}
+  m_AnchoredPosition: {x: -376.1, y: 275.2}
   m_SizeDelta: {x: 304.59, y: 52.717}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &308093839
@@ -2522,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca64bbb29033544c8200bd2dd312419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 0}
+  Health: {fileID: 308093839}
   damage: 10
   Hittable:
     serializedVersion: 2
