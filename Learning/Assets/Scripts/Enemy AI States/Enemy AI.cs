@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyAI : EnemyStructure, IDamageable
 {
+    public Player player;
     Rigidbody rb;
 
     [Header("Ground Check")]
@@ -13,7 +14,7 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     NavMeshAgent agent;
 
-    public Transform player;
+    public Transform playerTransform;
 
     Vector3 destination;
 
@@ -32,7 +33,7 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     public void Damage()
     {
-        Health = Health - 50;
+        Health -= 50;
 
         Destroy(Enemy);
 
@@ -70,27 +71,30 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     public void Chase()
     {
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(playerTransform.transform.position);
 
-        Vector3 Distance = player.transform.position - agent.transform.position;
+        Vector3 Distance = playerTransform.transform.position - agent.transform.position;
 
         if (Distance.magnitude < 2f)
         {
             agent.isStopped = true;
-            //playerVitals.Health -= 10f;
         }
         else
         {
             agent.isStopped = false;
         }
+    }
 
-
+    void ResetAttack()
+    {
+        player.TakeDamage(10);
     }
 
     protected override void Attack()
     {
 
         base.Attack();
+        player.TakeDamage(10);
 
         Debug.Log("Goon attacked");
 
