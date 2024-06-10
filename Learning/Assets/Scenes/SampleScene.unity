@@ -694,7 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308093838}
   - component: {fileID: 308093840}
-  - component: {fileID: 308093839}
+  - component: {fileID: 308093841}
   m_Layer: 5
   m_Name: Health bar
   m_TagString: Untagged
@@ -723,50 +723,6 @@ RectTransform:
   m_AnchoredPosition: {x: -657.6241, y: 369.8995}
   m_SizeDelta: {x: 505.3419, y: 46.9179}
   m_Pivot: {x: 0.49999997, y: 0.5}
---- !u!114 &308093839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308093837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56574dc348dfaf645b4a59f85cf3f31c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 308093840}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0.089291796, b: 0.08018869, a: 1}
-    key1: {r: 1, g: 0.91820973, b: 0, a: 1}
-    key2: {r: 0.51089036, g: 1, b: 0.48584908, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 17926
-    ctime1: 36237
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 1
-    m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  fill: {fileID: 1307337854}
 --- !u!114 &308093840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +774,50 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &308093841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308093837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29ed2506d131481ca769c35c2e5da67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 308093840}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.0141509175, b: 0.0141509175, a: 1}
+    key1: {r: 1, g: 0.94173837, b: 0.07075471, a: 1}
+    key2: {r: 0.3726415, g: 1, b: 0.4345204, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 15806
+    ctime1: 32960
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 1307337854}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,12 +2520,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049000170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ca64bbb29033544c8200bd2dd312419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 308093839}
+  Health: {fileID: 308093841}
   damage: 10
   Hittable:
     serializedVersion: 2
@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  healthBar: {fileID: 308093839}
+  healthBar: {fileID: 308093841}
 --- !u!1 &1076295272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -3576,7 +3576,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
