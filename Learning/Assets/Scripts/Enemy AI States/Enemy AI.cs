@@ -41,13 +41,20 @@ public class EnemyAI : EnemyStructure, IDamageable
     public void Damage()
     {
         //Health -= 50;
-        currentHealth = currentHealth - 1;
 
 
-        if(currentHealth <= 0)
-        {
-            Destroy(Enemy);
-        }
+            currentHealth -= 10;
+
+
+            if (currentHealth <= 0)
+            {
+                Destroy(Enemy);
+            }
+        
+        //currentHealth = currentHealth - 25;
+
+
+
 
 
     }

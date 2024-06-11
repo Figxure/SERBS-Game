@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour
         else
         {
             rb.drag = 0;
-            rb.angularDrag = 100f;
+            rb.angularDrag = 6f;
         }
 
 

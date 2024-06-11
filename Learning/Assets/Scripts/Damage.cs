@@ -10,6 +10,8 @@ public class Damage : MonoBehaviour
     public Transform attackPoint;
     public float attackRange;
 
+    public bool allowPunch = true;
+
 
     // Update is called once per frame
     void Update()
@@ -42,12 +44,23 @@ public class Damage : MonoBehaviour
         {
             Debug.Log(obj);
 
-            if (Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit))
+            if (Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit) && allowPunch == true)
             {
                 hit.Damage();
 
                 Debug.Log("hit mode");
+
+                allowPunch = false;
+
+                Invoke("ResetPunch", 0.7f);
             }       
         }
     }
+
+    private void ResetPunch()
+    {
+        allowPunch = true;
+    }
 }
+
+
