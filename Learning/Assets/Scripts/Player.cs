@@ -7,6 +7,7 @@ using UnityEngine;
         public int maxHealth = 100;
         public int currentHealth;
         public Healthbar healthBar;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -20,6 +21,7 @@ using UnityEngine;
         {
             
         }
+
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
