@@ -52,7 +52,7 @@ public class Damage : MonoBehaviour
 
                 allowPunch = false;
 
-                Invoke("ResetPunch", 0.7f);
+                Invoke("ResetPunch", 0.3f);
             }       
         }
     }

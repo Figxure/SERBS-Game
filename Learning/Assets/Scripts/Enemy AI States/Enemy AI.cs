@@ -40,23 +40,14 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     public void Damage()
     {
-        //Health -= 50;
+        //takes away 50 health
+            currentHealth -= 50;
 
-
-            currentHealth -= 10;
-
-
+        //checks if he's dead, then deletes him
             if (currentHealth <= 0)
             {
                 Destroy(Enemy);
             }
-        
-        //currentHealth = currentHealth - 25;
-
-
-
-
-
     }
 
     // Start is called before the first frame update

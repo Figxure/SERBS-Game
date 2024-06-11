@@ -7,10 +7,6 @@ public abstract class  EnemyStructure : MonoBehaviour
     public int currentHealth = 100;
 
 
-    //public float speed;
-
-
-
     protected abstract void Update();
 
   

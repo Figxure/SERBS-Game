@@ -18,11 +18,8 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
+            
         }
-    }
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
