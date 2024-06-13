@@ -30,7 +30,7 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     public float timeBetweenAttacks;
 
-    public bool readyToAttack;
+    public bool readyToAttack = true;
 
     public bool attacked;
 
@@ -88,58 +88,47 @@ public class EnemyAI : EnemyStructure, IDamageable
 
         if (Distance.magnitude < 2f)
         {
-            readyToAttack = true;
-
+            //stops the agent
             agent.isStopped = true;
-            
-            if(readyToAttack == true)
-                Attack();
+
+
+            //checks if its ready to attack, then invokes attack method after 0.7 seconds
+            if (readyToAttack == true)
+            {
+                Invoke("Attack", 1.0f);
+            }
+
 
         }
         else
         {
             agent.isStopped = false;
-            
         }
     }
 
-    void ResetAttack()
-    {
-        attacked = false;
-        readyToAttack = true;
 
-        Invoke("Chase", 2.0f);
-
-        
-    }
 
     protected override void Attack()
     {
-
+        //calls player take damage function
         base.Attack();
-        player.TakeDamage(1);
+        player.TakeDamage(10);
 
-        attacked = true;
-
+        //sets ready to attack to false
         readyToAttack = false;
 
         Debug.Log("Goon attacked");
 
-        if(attacked == true)
-            Invoke("ResetAttack", 4.0f);
+        //if(readyToAttack == false)
+        Invoke("ResetAttack", 1.0f);
 
     }
 
+    void ResetAttack()
+    {
+        //attacked = false;
+        readyToAttack = true;
 
-
-
-
-    //private void FaceTarget()
-    //{
-
-    //    Vector3 lookPos = destination - transform.position;
-    //    lookPos.y = 0;
-    //    Quaternion rotation = Quaternion.LookRotation(lookPos);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 3f);
-    //}
+        Invoke("Chase", 0.5f);
+    }
 }
