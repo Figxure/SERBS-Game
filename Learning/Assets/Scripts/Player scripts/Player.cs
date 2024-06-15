@@ -8,6 +8,8 @@ using UnityEngine;
         public int currentHealth;
         public Healthbar healthBar;
 
+        public bool hit = true;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -24,8 +26,24 @@ using UnityEngine;
 
         public void TakeDamage(int damage)
         {
-            currentHealth -= damage;
 
-            healthBar.SetHealth(currentHealth);
+            if(hit)
+            {
+                currentHealth -= damage;
+
+                healthBar.SetHealth(currentHealth);
+
+                hit = false;
+            }
+
+
+
+        Invoke("ResetHit", 1f);
+
+        }
+
+        void ResetHit()
+        {
+            hit = true;
         }
     }
