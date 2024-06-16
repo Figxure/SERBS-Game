@@ -12,7 +12,7 @@ public abstract class  EnemyStructure : MonoBehaviour
   
     protected virtual void Attack()
     {
-        Debug.Log("Enemy Class: Attack Method Called");
+        //Debug.Log("Enemy Class: Attack Method Called");
     }
 
 }

@@ -2,48 +2,99 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public class Player : MonoBehaviour
+public class Player : MonoBehaviour
+{
+    public int maxHealth = 100;
+    public int currentHealth;
+    public Healthbar healthBar;
+
+    public bool hit = true;
+
+    public bool hasItem = false;
+
+    public Transform handPos;
+
+    [SerializeField] private GameObject playerItem;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        public int maxHealth = 100;
-        public int currentHealth;
-        public Healthbar healthBar;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
 
-        public bool hit = true;
+    }
 
-        // Start is called before the first frame update
-        void Start()
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.G) && playerItem != null)
         {
-            currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
-
+            drop(playerItem);
         }
+    }
 
-        // Update is called once per frame
-        void Update()
+    public void TakeDamage(int damage)
+    {
+
+        if (hit)
         {
-            
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+
+            hit = false;
         }
-
-        public void TakeDamage(int damage)
-        {
-
-            if(hit)
-            {
-                currentHealth -= damage;
-
-                healthBar.SetHealth(currentHealth);
-
-                hit = false;
-            }
 
 
 
         Invoke("ResetHit", 1f);
 
+    }
+
+    void ResetHit()
+    {
+        hit = true;
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var item = collision.gameObject.GetComponent<ItemData>();
+
+        if (!item || hasItem)
+        {
+            return;
         }
 
-        void ResetHit()
-        {
-            hit = true;
-        }
+        hasItem = true;
+
+        item.gameObject.transform.parent = handPos.transform;
+
+        item.gameObject.transform.position = handPos.position;
+
+        item.rb.isKinematic = true;
+
+        playerItem = item.gameObject;
+
+        Debug.Log("I have an item");
     }
+
+    void drop(GameObject Item)
+    {
+        hasItem = false;
+
+        playerItem = null;
+
+        Rigidbody rb = Item.GetComponent<Rigidbody>();
+
+        rb.isKinematic = false;
+
+        rb.detectCollisions = true;
+
+
+        Item.transform.parent = null;
+
+        Debug.Log("Dropped item");
+    }
+
+}

@@ -42,13 +42,13 @@ public class Damage : MonoBehaviour
 
         foreach (var obj in objs)
         {
-            Debug.Log(obj);
+            //Debug.Log(obj);
 
             if (Input.GetKey(KeyCode.Mouse0) && obj.TryGetComponent(out IDamageable hit) && allowPunch == true)
             {
                 hit.Damage();
 
-                Debug.Log("hit mode");
+                //Debug.Log("hit mode");
 
                 allowPunch = false;
 

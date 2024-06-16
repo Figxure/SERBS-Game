@@ -84,7 +84,7 @@ public class EnemyAI : EnemyStructure, IDamageable
 
         Vector3 Distance = playerTransform.transform.position - agent.transform.position;
 
-        if (Distance.magnitude <= 1.8f)
+        if (Distance.magnitude <= 2.2f)
         {
             //stops the agent
             agent.isStopped = true;
@@ -114,7 +114,7 @@ public class EnemyAI : EnemyStructure, IDamageable
         //sets ready to attack to false
         readyToAttack = false;
 
-        Debug.Log("Goon attacked");
+        //Debug.Log("Goon attacked");
 
         //if(readyToAttack == false)
         Invoke("ResetAttack", 1.0f);
