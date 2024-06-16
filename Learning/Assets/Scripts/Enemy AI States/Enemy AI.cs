@@ -16,11 +16,9 @@ public class EnemyAI : EnemyStructure, IDamageable
 
     public Transform playerTransform;
 
-    Vector3 destination;
+    //Vector3 destination;
 
     public GameObject Enemy;
-
-    //public PlayerHealth playerVitals;
 
     public LayerMask IsGround;
 
@@ -86,16 +84,15 @@ public class EnemyAI : EnemyStructure, IDamageable
 
         Vector3 Distance = playerTransform.transform.position - agent.transform.position;
 
-        if (Distance.magnitude < 2f)
+        if (Distance.magnitude <= 1.8f)
         {
             //stops the agent
             agent.isStopped = true;
 
-
-            //checks if its ready to attack, then invokes attack method after 0.7 seconds
+            //checks if its ready to attack, then invokes attack method after 0.5 seconds
             if (readyToAttack == true)
             {
-                Invoke("Attack", 1.0f);
+                Invoke("Attack", 0.8f);
             }
 
 
