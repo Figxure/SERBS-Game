@@ -9,6 +9,10 @@ public class Inventory : MonoBehaviour
     Image itemIcon;
     public CanvasGroup canvasGroup { get; private set; }
 
+    //public ItemData myItem { get; set; }
+    //public InventorySlots
+
+
     public GameObject playerInventory;
 
     public LayerMask inventoryObject;

@@ -11,9 +11,9 @@ public class ItemData : MonoBehaviour
     //public string id;
 
     //public string displayName;
-   // public SlotTag itemtag;
+    // public SlotTag itemtag;
 
-   // public Sprite icon;
+    // public Sprite icon;
 
 
     public GameObject Item;
@@ -29,12 +29,12 @@ public class ItemData : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "PlayerCapsule")
+        if (collision.gameObject.name == "PlayerCapsule")
         {
             Item.transform.parent = playerPos.transform;
 
-                Item.transform.position = playerPos.transform.position;
-            
+            Item.transform.position = playerPos.transform.position;
+
 
 
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -44,7 +44,3 @@ public class ItemData : MonoBehaviour
 
 
 }
-
-//public class I
-
-

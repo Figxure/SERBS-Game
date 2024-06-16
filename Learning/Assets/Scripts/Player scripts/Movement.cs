@@ -28,7 +28,7 @@ public class Movement : MonoBehaviour
 
     public LayerMask IsGround;
 
-    public float groundDrag;
+    public float groundDrag = 5f;
 
     bool grounded;
     //Friction ans jump ^
@@ -94,7 +94,7 @@ public class Movement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.LeftShift) == false)
         {
-            Move_Speed = 12f;
+            Move_Speed = 8f;
         }
 
 
