@@ -20,6 +20,10 @@ public class ItemData : MonoBehaviour
 
     public GameObject playerPos;
 
+    public Transform ItemObj;
+
+    public Transform ItemNewPos;
+
     public Rigidbody rb;
 
     private void Start()
@@ -27,18 +31,50 @@ public class ItemData : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
+    private void FixedUpdate()
+    {
+        //OnCollisionEnter(Collision collision) ;
+
+        drop();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PlayerCapsule")
         {
             Item.transform.parent = playerPos.transform;
 
-            Item.transform.position = playerPos.transform.position;
+            //Item.transform.position = playerPos.transform.position;
+
+            ItemObj.position = ItemNewPos.position;
+
+            rb.isKinematic = true;
+
+            //Item.GetComponent<Rigidbody>().enabled = false;
+
+            //Destroy(rb);
+
+        }
 
 
+    }
 
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            //rb.useGravity = false;
+    void drop()
+    {
+        if (Input.GetKey(KeyCode.G))
+        {
+            Debug.Log("Pressed G");
+
+            
+            Rigidbody rb = Item.GetComponent<Rigidbody>();
+
+            rb.isKinematic = false;
+
+            //rb = GetComponent<Rigidbody>();
+
+            Item.transform.parent = null;
+
+            //Item.transform.parent(null);
         }
     }
 

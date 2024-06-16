@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCoolDown);
 
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
         }
 
         Move();
