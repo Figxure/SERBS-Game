@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
     public Transform handPos;
 
+    public Transform Orientation;
+
     [SerializeField] private GameObject playerItem;
 
     // Start is called before the first frame update
@@ -71,6 +73,10 @@ public class Player : MonoBehaviour
         item.gameObject.transform.parent = handPos.transform;
 
         item.gameObject.transform.position = handPos.position;
+
+        item.gameObject.transform.rotation = Orientation.rotation; 
+
+        item.gameObject.transform.Rotate(0, 90, 0);
 
         item.rb.isKinematic = true;
 

@@ -10,6 +10,22 @@ public class vending_machine : MonoBehaviour
 
     public Transform spawnPoint;
 
+    public float DespawnTime = 10f;
+
+
+    private void Update()
+    {
+        if(DespawnTime > 0)
+        {
+            DespawnTime -= Time.deltaTime;
+            if(DespawnTime <= 0)
+            {
+                DeleteCans();
+            }
+        }
+    }
+
+
     private void OnTriggerStay(Collider other)
     {
 
@@ -27,13 +43,13 @@ public class vending_machine : MonoBehaviour
             }
 
 
-            Invoke("DeleteCans", 5f);
+            //Invoke("DeleteCans", 5f);
 
         }
     }
 
     void DeleteCans()
     {
-        Destroy(HealthDrink);
+        Destroy(this.gameObject);
     }
 }
