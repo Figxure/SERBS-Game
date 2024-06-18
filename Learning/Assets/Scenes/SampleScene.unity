@@ -2318,7 +2318,7 @@ GameObject:
   - component: {fileID: 811322248}
   - component: {fileID: 811322252}
   m_Layer: 3
-  m_Name: Cube
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6981,5 +6981,5 @@ SceneRoots:
   - {fileID: 1904197921}
   - {fileID: 459103332}
   - {fileID: 1749485310}
-  - {fileID: 932071734}
   - {fileID: 1467336882}
+  - {fileID: 932071734}
