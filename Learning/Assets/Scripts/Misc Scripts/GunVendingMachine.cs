@@ -17,14 +17,14 @@ public class GunVendingMachine : MonoBehaviour
 
     private void Update()
     {
-        if (DespawnTime > 0)
-        {
-            DespawnTime -= Time.deltaTime;
-            if (DespawnTime <= 0)
-            {
-                DeleteGuns();
-            }
-        }
+        //if (DespawnTime > 0)
+        //{
+        //    DespawnTime -= Time.deltaTime;
+        //    if (DespawnTime <= 0)
+        //    {
+        //        DeleteGuns();
+        //    }
+        //}
     }
 
     private void OnTriggerStay(Collider other)
@@ -53,6 +53,6 @@ public class GunVendingMachine : MonoBehaviour
 
     void DeleteGuns()
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }

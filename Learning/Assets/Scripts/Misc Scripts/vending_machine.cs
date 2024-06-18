@@ -15,14 +15,14 @@ public class vending_machine : MonoBehaviour
 
     private void Update()
     {
-        if(DespawnTime > 0)
-        {
-            DespawnTime -= Time.deltaTime;
-            if(DespawnTime <= 0)
-            {
-                DeleteCans();
-            }
-        }
+        //if(DespawnTime > 0)
+        //{
+        //    DespawnTime -= Time.deltaTime;
+        //    if(DespawnTime <= 0)
+        //    {
+        //        DeleteCans();
+        //    }
+        //}
     }
 
 
@@ -50,6 +50,6 @@ public class vending_machine : MonoBehaviour
 
     void DeleteCans()
     {
-        Destroy(this.gameObject);
+       // Destroy(this.gameObject);
     }
 }
