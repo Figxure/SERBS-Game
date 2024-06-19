@@ -11,6 +11,12 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
+    public int XPos;
+
+    public int ZPos;
+
+    public int enemyCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,31 @@ public class EnemySpawner : MonoBehaviour
 
         Enemy.transform.position = spawnPoint.position;
 
+        
+
         Destroy(EnemyTrigger);
+
+        //CallFunction();
+
+
     }
+
+    //void CallFunction()
+    //{
+    //    StartCoroutine(EnemyDrop());
+    //}
+
+    //IEnumerator EnemyDrop()
+    //{
+    //    while(enemyCount < 3)
+    //    {
+    //        XPos = Random.Range(1, 30);
+    //        ZPos = Random.Range(1, 15);
+
+    //        Instantiate(Enemy, new Vector3(XPos, 4, ZPos), Quaternion.identity);
+
+    //        yield return new WaitForSeconds(0.1f);
+    //        enemyCount += 1;
+    //    }
+    //}
 }
