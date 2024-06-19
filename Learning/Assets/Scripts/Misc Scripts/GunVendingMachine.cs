@@ -39,11 +39,7 @@ public class GunVendingMachine : MonoBehaviour
             Gun.transform.position = spawnPoint.position;
 
 
-            if (player.currentHealth < player.maxHealth)
-            {
-                player.currentHealth = player.currentHealth + 10;
-                player.healthBar.SetHealth(player.currentHealth);
-            }
+            
 
             
             //Invoke("DeleteCans", 5f);
