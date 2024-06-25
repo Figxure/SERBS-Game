@@ -38,10 +38,10 @@ public class GunVendingMachine : MonoBehaviour
 
             Gun.transform.position = spawnPoint.position;
 
+            Gun.transform.parent = Orientation.transform;
 
-            
 
-            
+
             //Invoke("DeleteCans", 5f);
 
         }

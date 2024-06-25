@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
 
     public int enemyCount;
 
+    public int enemyMaxCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,15 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(Enemy);
 
         Enemy.transform.position = spawnPoint.position;
 
-        
+        while (enemyCount < enemyMaxCount)
+        {
+            Instantiate(Enemy);
+            enemyCount += 1;
+        }
+
 
         Destroy(EnemyTrigger);
 

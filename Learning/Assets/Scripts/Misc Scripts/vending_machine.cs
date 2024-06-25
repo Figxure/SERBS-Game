@@ -6,6 +6,8 @@ public class vending_machine : MonoBehaviour
 {
     public GameObject HealthDrink;
 
+    public Transform Orientation;
+
     public Player player;
 
     public Transform spawnPoint;
@@ -35,6 +37,7 @@ public class vending_machine : MonoBehaviour
 
             HealthDrink.transform.position = spawnPoint.position;
 
+            HealthDrink.transform.parent = Orientation.transform;
 
             if (player.currentHealth < player.maxHealth)
             {
