@@ -11,43 +11,56 @@ public class EnemySpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
-    public int XPos;
+    //public int XPos;
 
-    public int ZPos;
+    //public int ZPos;
 
     public int enemyCount;
 
     public int enemyMaxCount;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Enemy.transform.position = spawnPoint.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Enemy.transform.position = spawnPoint.position;
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        Enemy.transform.position = spawnPoint.position;
+        enemyCount = 0;
+
+        
 
         while (enemyCount < enemyMaxCount)
         {
-            Instantiate(Enemy);
+            //Enemy.transform.position = spawnPoint.position;
+
+            Instantiate(Enemy, spawnPoint);
+
+
             enemyCount += 1;
         }
 
+        //Enemy.transform.position = spawnPoint.position;
 
-        Destroy(EnemyTrigger);
+        Invoke("DestroyCollider", 1f);
 
         //CallFunction();
 
 
+    }
+
+    void DestroyCollider()
+    {
+        Destroy(EnemyTrigger);
     }
 
     //void CallFunction()
